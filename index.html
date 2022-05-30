@@ -10,7 +10,7 @@
         <meta charset="utf-8"/>
 
         <!-- Set the title bar of the page -->
-        <title>Zombie Nation</title>
+        <title>Created with GameMaker</title>
 
         <!-- Set the background colour of the document -->
         <style>
@@ -80,26 +80,7 @@
         </div>
 
         <!-- Run the game code -->
-        <script type="text/javascript" src="html5game/SlotGame.js?ZHOZB=803204352"></script>
+        <script type="text/javascript" src="html5game/SlotGame.js?LWNYB=8962623"></script>
         <script>window.onload = GameMaker_Init;</script>
-        <script>
-            var elem = document.documentElement;
-
-            /* View in fullscreen */
-            function openFullscreen() {
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.webkitRequestFullscreen) { /* Safari */
-                elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) { /* IE11 */
-                elem.msRequestFullscreen();
-            }
-            }
-            let isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
-                if (isMobile) {
-                    console.log("its mobile");
-                    elem.addEventListener("click", openFullscreen);
-                }
-            </script>
     </body>
 </html>
