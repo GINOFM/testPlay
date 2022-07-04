@@ -67,11 +67,18 @@
                width: 100%;
                height: 100%;
             }
-            img{
+            #GM4HTML5_loadingscreen{
                 object-fit: fill;
                 width: 1000px;
                 height: 1085px;
             }
+                    .cont{
+                position:absolute;
+                }
+                .imgC{
+                    width: auto;
+                    height: auto;
+                }
         </style>
     </head>
 
@@ -82,6 +89,8 @@
             <canvas id="canvas" width="1000px" height="1085px" style="position: absolute; top: 50%; left: 50%; bottom: -50%; right: -50%; transform: translate(-50%, -50%);" >
                      <p>Your browser doesn't support HTML5 canvas.</p>
             </canvas>
+            <img class="imgC cont" id="imgTochange" src="logoSmall.png"  style="position: absolute; top: 70%; left: 50%; bottom: -30%; right: -50%; transform: translate(-50%, -50%); clip-path: inset(0 100% 0 0)" alt="">
+            <img class="imgC cont" id="imgToNotChange" src="logoSmall.png"  style="position: absolute; top: 70%; left: 50%; bottom: -30%; right: -50%; transform: translate(-50%, -50%); opacity: 0.3;" alt="">
         </div>
 
         <!-- Run the game code -->
@@ -90,6 +99,18 @@
         <script>
             var elem = document.documentElement;
             let isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+
+            var cvs=document.getElementById("canvas");
+            var imgL=document.getElementsByClassName("imgC");
+            if(window.innerWidth>window.innerHeight){
+                cvs.height=window.innerHeight;
+                cvs.width=cvs.height*1.04;
+                
+            }else if(window.innerWidth<window.innerHeight){
+                cvs.width=window.innerWidth;
+                cvs.height=cvs.width*1.04;
+            }
+            imgL.width=cvs.width*0.8;
 
 
             /* View in fullscreen */
